@@ -1,12 +1,13 @@
-name: matrix
+name: matrix Demo
 on: push
 jobs:
   build:
+    continue-on-error: true
     strategy:
       matrix:
         node-version: [12, 14, 16]
-        operation-system: [ubuntu-latest, windows-latest]
-    runs-on: ${{ matrix.operation-system }}
+        operating-system: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.operating-system }}
     steps:
       - name: Get Code
         uses: actions/checkout@v3
